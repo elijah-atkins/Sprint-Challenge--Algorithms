@@ -7,19 +7,23 @@ pseudocode with respect to the input size n of each of the following:
 
 ```python
 a)  a = 0
-    while (a < n * n * n):
-      a = a + n * n
+  while (a < n * n * n):
+    a = a + n * n //constant time
 ```
+Big O of N
+O(n)
 
 
 ```
 b)  sum = 0
-    for i in range(n):
+    for i in range(n):// n times
       j = 1
-      while j < n:
-        j *= 2
+      while j < n: // n times
+        j *= 2 //constent time
         sum += 1
 ```
+Big O of N Squared 
+O(n Squared)
 
 ```
 c)  def bunnyEars(bunnies):
@@ -28,6 +32,8 @@ c)  def bunnyEars(bunnies):
 
       return 2 + bunnyEars(bunnies-1)
 ```
+Big O of N 
+O(n)
 
 ## Exercise II
 
