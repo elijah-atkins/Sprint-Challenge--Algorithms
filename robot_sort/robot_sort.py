@@ -96,8 +96,30 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        #store first item in _item cache 
+        #replaceing item in array for None
+        self.swap_item()
+        #endless loop
+        while True:
+            #go from current position to end swapping _item cache for any item lower than it, to get lowest number found in list
+            while self.can_move_right():
+                self.move_right()
+                if self.compare_item() == 1:
+                    self.swap_item()
+            #go left until the the compare item is None
+            while self.compare_item() != None:
+                self.move_left()
+
+            #replace the None with _item cache (lowest remaining number)
+            self.swap_item()
+            #break the loop if there is nothing to the right
+            if not self.can_move_right():
+                return
+            #goto next item in list
+            self.move_right()
+            #store next list item in _item cache and put None in Current spot in array
+            self.swap_item()
+
 
 
 if __name__ == "__main__":
